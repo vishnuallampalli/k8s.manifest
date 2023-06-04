@@ -1,34 +1,37 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
-  labels:
-    app: backend-java
+  name: backend-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend-java
+      app: backend
   template:
     metadata:
       labels:
-        app: backend-java
+        app: backend
     spec:
       containers:
-        - name: java
-          image: vishnuallampalli/backend:latest
-          ports:
-            - containerPort: 8080
+      - name: backend
+        image: vishnuallampalli/backend:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service
+  name: backendservice
 spec:
   selector:
-    app: backend-java
+    app: backend
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 3000
-  type: NodePort
+      port: 8080
+      targetPort: 8080
+      nodePort: 31502
+  type: NodePort 
+        
