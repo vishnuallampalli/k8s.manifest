@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: react
-          image: wahtej/forntend:latest
+          image: vishnuallampalli/forntend:latest
           ports:
             - containerPort: 3000
 ---
