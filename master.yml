@@ -5,7 +5,7 @@
   tasks:
     - name: Clone Git Repository
       git:
-        repo: https://github.com/wahtej/k8s.manifest.git
+        repo: https://github.com/vishnuallampalli/k8s.manifest.git
         dest: /home/ubuntu/k8s
         force: yes
       become: false
