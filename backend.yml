@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: java
-          image: wahtej/backend:latest
+          image: vishnuallampalli/backend:latest
           ports:
             - containerPort: 8080
 ---
